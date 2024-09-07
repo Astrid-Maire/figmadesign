@@ -1,18 +1,12 @@
 ---
+import Footer from "../components/Footer.astro"
+
 import BaseLayots from "../layouts/BaseLayots.astro";
-import { Image } from 'astro:assets';
-import EmployeeSection from "../components/EmployeeSection.astro";
-const employeeData = await fetch(
-    "https://raw.githubusercontent.com/daviatkea/frontend-design/main/resources/reset.css"
-    ).then((res) => res.json());
 ---
-<Image alt="" src={}  format="avif"/>
-<EmployeeSection data={employeeData} theme="dark"/>
-<EmployeeSection = {}/>
 
 <BaseLayots title="Home">
 
-
+<Footer />
 
 
 </BaseLayots>

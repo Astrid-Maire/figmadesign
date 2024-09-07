@@ -1,0 +1,11 @@
+---
+import { Image } from 'astro:assets';
+import EmployeeSection from "../components/EmployeeSection.astro";
+const employeeData = await fetch(
+    "https://raw.githubusercontent.com/daviatkea/frontend-design/main/resources/reset.css"
+    ).then((res) => res.json());
+---
+<EmployeeSection data={employeeData} theme="dark"/>
+<EmployeeSection = {}/>
+
+<Image alt="" src={}  format="avif"/>
