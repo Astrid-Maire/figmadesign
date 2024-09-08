@@ -1,12 +1,56 @@
 ---
-import Footer from "../components/Footer.astro"
+import "../styles/global.css";
 
-import BaseLayots from "../layouts/BaseLayots.astro";
+import ScrollingContainer from "../components/ScrollingContainer.astro";
+
+import { scrollingCard } from "../data/scrolling-card.js";
 ---
 
-<BaseLayots title="Home">
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Scrolling Container</title>
+  </head>
+  <body>
+    <main>
+      <section>
+        <header>
+          <h2>Financial Projections</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p>
+        </header>
 
-<Footer />
+        <ScrollingContainer scrollingCard={scrollingCard} />
+      </section>
+    </main>
+  </body>
+</html>
 
+<style>
+  main {
+    padding-block: 4rem; 
+  }
 
-</BaseLayots>
+  section {
+    display: grid;
+    grid: auto / [full-start] 1fr [content] min(65ch, 100% - 2rem) 1fr [full-end];
+    gap: 1rem;
+
+  
+    > * {
+      grid-column: content;
+    }
+
+    ul {
+      grid-column: full;
+      padding-inline: max(1rem, 50% - min(65ch, 100% - 2rem) / 2); 
+    }
+  }
+</style>

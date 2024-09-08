@@ -7,8 +7,21 @@
     font-family: Cabin;
   }
 
+  :root {
+    --Primary-01: rgba(255, 204, 74, 1);
+    --Primary-02: rgba(78, 175, 78, 1);
+    --Primary-03: rgba(24, 24, 24, 1);
+    --Primary-04: rgba(245, 245, 245, 1);
+    --Primary-05: rgba(255, 255, 255, 1);
+  }
+
+  @import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap");
+
+  :root {
+  }
+
   h1 {
-    --h1-color: #1c1c1c;
+    --h1-color: var(--Primary-03);
     font-family: Cabin;
     font-size: 3.125rem;
     font-weight: 600;
