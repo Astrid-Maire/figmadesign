@@ -1,20 +1,21 @@
 ---
+import "../styles/global.css";
+
 const { scrollingCard } = Astro.props;
 ---
-
 <ul class="full-width">
-  {
-    scrollingCard.map((card) => (
-      <li>
-        <h3>{card.title}</h3>
-        <p>{card.body}</p>
-      </li>
-    ))
-  }
-</ul>
+    {
+      scrollingCard.map((card) => (
+        <li>
+          <h3>{card.title}</h3>
+          <p>{card.body}</p>
+        </li>
+      ))
+    }
+  </ul>
 
 <style>
-  ul {
+   ul {
     list-style: none;
     overflow-x: auto;
     display: flex;
@@ -26,7 +27,7 @@ const { scrollingCard } = Astro.props;
       flex-shrink: 0;
 
       padding: var(--card-padding);
-      background: var(--card-background);
+      background: var(--Primary-04);
       border-radius: var(--card-border-radius);
       color: var(--card-text-color);
 

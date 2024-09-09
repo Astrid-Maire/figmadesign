@@ -1,6 +1,50 @@
-<button popovertarget="popup">login</button>
+---
+import "../styles/global.css";
+---
 
+<button popovertarget="popup">login</button>
 <div popover id="popup">
- 
+ <h1>Dashboard login</h1>
+ <p class="circle">Enter Email</p>
+ <p class="circle"> Enter Password</p>
+ <button class="go">Go to dashboard</button>
 </div>
 
+<style>
+    ::backdrop {
+  background: var(--Primary-03);
+  backdrop-filter: blur(4px);
+    }
+
+    .popup{
+      background-color: var(--Primary-03);
+    }
+
+    h1{
+      font-size: var(--step-1);
+    }
+
+    p{
+      font-size: var(--step--1);
+    }
+
+      .circle {
+    width: 70%;
+    height: 40%;
+    border-radius: 30%; 
+    border: var(--Primary-03); 
+    background-color: var(--Primary-05); 
+    color: var(--Primary-03); 
+}
+.go {
+  background-color: var(--Primary-01); 
+  color: var(--Primary-03); 
+  border-radius: 30px; 
+  font-size: var(--step--1); 
+
+&:hover {
+  background-color: var(--Primary-01); 
+}
+}
+
+</style>
