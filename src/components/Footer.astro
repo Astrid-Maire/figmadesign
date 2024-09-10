@@ -11,32 +11,29 @@ import "../styles/global.css";
 <h2>©2022 Consultalk. All rights reserved | Terms of Service | Privacy Policy</h2>
     </div>
 </div>
-
 </body>
-
 
 
 <style>  
 body{
     background-color: var(--Primary-03);
-    padding: 3%;
     display: grid;
-  grid-template-rows: auto 2fr auto 2fr auto;
+  grid-template-rows: auto 1fr auto ;
   grid-template-columns:
-    [full-start] 1fr [content-start] minmax(0, 65ch) [content-end] 1fr [full-end];
-    gap: 1rem;
+    [full-start] 1fr [content-start] minmax(0, 0.65ch) [content-end] 1fr [full-end];
 }
 
  hr {
         border: none;
         height: 2px;
         background-color: var(--Primary-05);
-        width: 100%; 
+        width: 55%; 
     }
 
 .container, .container-1 {
     display: flex;
     justify-content: space-around;
+    padding: 2% 0 0 0 ;
 
     h1{
         font-size: var(--step-0);
@@ -52,8 +49,6 @@ body{
     background-color: var(--Primary-03);
     color: var(--Primary-05);
     grid-column: full;
-  display: grid;
-  grid-template-columns: subgrid;
   
   > * {
     grid-column: content;

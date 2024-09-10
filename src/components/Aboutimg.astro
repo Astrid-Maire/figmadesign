@@ -1,0 +1,76 @@
+---
+import "../styles/global.css";
+---
+<body>      
+      <main>
+        <section class="full-bleed">
+            <p>Case Studies single</p>
+            <h1>Taxes & Efficiency</h1>
+        </section>
+      </main>      
+</body>
+
+<style>  
+ody {
+  margin: 0; /* Fjern standard margin på body */
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns:
+    [full-start] 1fr [content-start] minmax(0, 65ch) [content-end] 1fr [full-end];
+  gap: 1rem;
+}
+
+main {
+  grid-column: full;
+  display: grid;
+  grid-template-columns: subgrid;
+  
+  > * {
+    grid-column: content;
+  }
+}
+
+.full-bleed {
+  grid-column: full;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  background-image: url("/aboutimg.jpg");
+  background-size: cover; /* Sørg for at billedet dækker hele containeren */
+  background-position: center; /* Centrér baggrundsbilledet */
+  background-repeat: no-repeat; /* Forhindrer gentagelse af billedet */
+  height: 100vh; /* Gør elementet lige så højt som viewporten */
+  padding: 20px; /* Tilføjer lidt padding omkring tekstindholdet */
+}
+
+.text-container {
+  display: grid;
+  grid-template-columns: 1fr; /* En kolonne layout for tekstcontaineren */
+  max-width: 80%; /* Begrænser bredden af tekstcontaineren */
+  background-color: var(--Primary-04); /* Baggrundsfarve for tekstcontaineren */
+  padding: 20px; /* Padding inden for tekstcontaineren */
+  border-radius: 10px; /* Rundede hjørner */
+}
+
+p {
+  font-size: var(--step--1);
+  background-color: var(--Primary-01);
+  border-radius: 20px;
+  text-align: left;
+  margin: 0; /* Fjern margin omkring paragrafen */
+}
+
+h1 {
+  font-size: var(--step-2);
+  margin-top: 10px; /* Margin over h1 for lidt afstand fra paragrafen */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+</style>
+
+
+
