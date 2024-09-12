@@ -11,33 +11,32 @@ import { scrollingCard } from "../data/scrolling-card.js";
 ---
 <Header />
 <Forside />
-
+<main>
 <meta name="generator" content={Astro.generator} />
 <ScrollingContainer scrollingCard={scrollingCard} />
+</main>
 
 <Newsletter />
  <Footer />
+ <style>
+  main {
+ padding-block: 4rem; 
+}
 
 
-<style>
-     main {
-    padding-block: 4rem; 
-  }
-  
+section {
+ display: grid;
+ grid: auto / [full-start] 1fr [content] min(65ch, 100% - 2rem) 1fr [full-end];
+ gap: 1rem;
 
-  section {
-    display: grid;
-    grid: auto / [full-start] 1fr [content] min(65ch, 100% - 2rem) 1fr [full-end];
-    gap: 1rem;
 
-  
-    > * {
-      grid-column: content;
-    }
+ > * {
+   grid-column: content;
+ }
 
-    ul {
-      grid-column: full;
-      padding-inline: max(1rem, 50% - min(65ch, 100% - 2rem) / 2); 
-    }
-  }
+ ul {
+   grid-column: full;
+   padding-inline: max(1rem, 50% - min(65ch, 100% - 2rem) / 2); 
+ }
+}
 </style>
