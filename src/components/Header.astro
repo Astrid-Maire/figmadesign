@@ -18,16 +18,16 @@ import "../styles/global.css";
       </div>
   </header>
 </div>
-</body>
+
 
 <style>
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   width: 100%; 
-  padding: 10px 20px; 
   box-sizing: border-box; 
+background-color: var(--Primary-03);
 
   .site-header {
     display: flex;
@@ -35,9 +35,19 @@ import "../styles/global.css";
 
     .container {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-evenly;
       align-items: center;
       width: 100%; 
+      padding: 1.5%;
+
+      h1{
+          font-size: var(--step-1);
+          color: var(--Primary-05);
+        }
+
+        p{
+          font-size: var(--step-0);
+        }
     }
 
     nav {
@@ -50,7 +60,6 @@ import "../styles/global.css";
           display: inline; 
           margin-right: 15px; 
         }
-
       }
 
       a {

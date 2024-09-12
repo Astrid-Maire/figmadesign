@@ -1,22 +1,258 @@
 ---
 import "../styles/global.css";
+import ForsideBox from "./ForsideBox.astro";
 ---
 <body>
     <div class="forside">
-        <div class="container">
+        <figure class="prik">
             <h1>Adam Buschemia Business Consultant</h1>
             <p>Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling.</p>
             <button>Book a Meeting</button>
-        </div>
+        </figure>
     <img class="bil" src="/sarah.jpg" alt="Et billedet af Sarah på forsiden">
+    </div>
+    <div class="box-container">
+        <div class="box-1">
+            <h2>Finance & Restructuring</h2>
+            <p>Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling.</p>
+            <button id="b">Our Services</button>
+        </div>
+        <div class="box-2">
+            <h2>Our Approach</h2>
+            <p>Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling.</p>
+       <button id="b">More About</button>
+        </div>
+        <div class="box-3">
+            <h2>Consultalk Result</h2>
+            <p>Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling.</p>
+            <button id="b-1">Explore Our Solution</button>
+        </div>
     </div>
 </body>
 
 <style>
 .forside {
     display: grid;
-    grid-area: 1 /1;
+    grid-template-columns:  7fr 6fr;
+    gap: 5%;
+    width: 100%;
+    background-color: var(--Primary-03);
+
+    .bil {
+    width: 100%; 
+    height: auto;
+    object-fit: cover; 
+    z-index: 2;
+    }
+
+    .prik {
+    display: flex;
+    flex-direction: column;
+    padding-top: 8%;
+    margin-left: var(--fluid);
+
+        h1{
+            font-size: var(--step-3);
+            color: var(--Primary-05);
+            padding-bottom: 3%;
+        }
+
+        p{
+            font-size: var(--step-0);
+            color: var(--Primary-05);
+            padding-bottom: 5%;
+        }
+
+        button{
+            display: inline-block;
+            font-size: var(--step--1);
+            color: var(--Primary-03); 
+            background-color: var(--Primary-05);
+            text-align: left; 
+            border: none; 
+            cursor: pointer; 
+            max-width: max-content; 
+            border-radius: 30px;
+            padding: 3%;
+        }
+    }
 }
 
+figure {
+  position: relative;
+  
+  :after {
+    z-index: 1;
+    content: '';
+    position: absolute;
+    inset: -30px -70px auto auto;
+    inline-size: calc( round( var(--_square-sum), var(--_square-size) ) - var(--_square-half) );
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, #BE965D, #976F40, #C99B61, #F0BE7B , #FFCB85, #EEBC79, #C0935B, #976F40) 0 0 / 100% 100%;
+    mask:
+      var(--square-pattern) 0 0 / var(--_square-size) var(--_square-size),
+      var(--square-pattern) var(--_square-half) var(--_square-half) / var(--_square-size) var(--_square-size);
+  }
+
+::after {
+    z-index: 1;
+    inset: 27% 110% auto auto;
+}
+
+::before {
+    z-index: 1;
+    content: '';
+    position: absolute;
+    inset: -30px -70px auto auto;
+    inline-size: calc( round( var(--_square-sum-2), var(--_square-size-2) ) - var(--_square-half-2) );
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, #BE965D, #976F40, #C99B61, #F0BE7B , #FFCB85, #EEBC79, #C0935B, #976F40) 0 0 / 100% 100%;
+    mask:
+      var(--square-pattern-2) 0 0 / var(--_square-size-2) var(--_square-size-2),
+      var(--square-pattern-2) var(--_square-half-2) var(--_square-half-2) / var(--_square-size-2) var(--_square-size-2);
+  }
+  ::before {
+    z-index: 1;
+    inset: 0px -70px auto auto; 
+}
+}
+
+@media (max-width: 800px) {
+.forside {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-bottom: 10%;
+
+    .bil {
+    width: 100%; 
+    height: auto;
+    object-fit: cover; 
+    order: -1;
+    z-index: 2;
+    }
+
+    .prik {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px; 
+    padding-right: 10%;
+
+        h1{
+            font-size: var(--step-3);
+            color: var(--Primary-05);
+            padding: 10% 0 0 0;
+            line-height: 2cap;
+        }
+
+        p{
+            font-size: var(--step-0);
+            color: var(--Primary-05);
+            padding-bottom: 10%;
+            line-height: 3cap;
+        }
+    }
+    .box-container {
+        display: grid;
+        grid-template-columns: 1fr; 
+    }
+
+    .box-container{
+    position: absolute; 
+    top: 60%;
+    left: 0;
+    right: 0;
+color: var(--Primary-05); 
+display: grid;
+grid-template-columns: 1fr;
+gap: 1%;
+margin-left: var(--fluid);
+margin-right: var(--fluid);
+
+    .box-1, .box-2, .box-3{
+    color: var(--Primary-05); 
+    background-color: var(--Primary-03);
+    filter: brightness(2.5);
+    border-radius: 30px;
+    text-align: left; 
+    border: none; 
+    padding: 10%;
+    padding: 0 10% 8% 10%;
+
+}
+    }
+
+figure {
+  position: relative;
+  
+  ::before {
+    z-index: 1;
+    content: '';
+    position: absolute;
+    inset: -30px -60px auto auto;
+    inline-size: calc( round( var(--_square-sum-1), var(--_square-size-1) ) - var(--_square-half-1) );
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, #BE965D, #976F40, #C99B61, #F0BE7B , #FFCB85, #EEBC79, #C0935B, #976F40) 0 0 / 100% 100%;
+    mask:
+      var(--square-pattern-1) 0 0 / var(--_square-size-1) var(--_square-size-1),
+      var(--square-pattern-1) var(--_square-half-1) var(--_square-half-1) / var(--_square-size-1) var(--_square-size-1);
+  }
+  ::before {
+    inset: -120px -90px auto auto; 
+}
+
+::after {
+    inset: 25% 105% auto auto;
+}
+}
+}
+}
+
+.box-container{
+    position: absolute; 
+    top: 60%;
+    left: 0;
+    right: 0;
+color: var(--Primary-05); 
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+gap: 1%;
+margin-left: var(--fluid);
+margin-right: var(--fluid);
+z-index: 3;
+
+    .box-1, .box-2, .box-3{
+    color: var(--Primary-05); 
+    background-color: var(--Primary-03);
+    filter: brightness(2.5);
+    border-radius: 30px;
+    text-align: left; 
+    border: none; 
+    padding: 10%;
+    padding: 0 10% 8% 10%;
+
+    h2{
+    font-size: var(--step-0);
+    line-height: 2cap;
+    padding: 10% 0 8% 0;
+     }
+
+    p{
+    font-size: var(--step--1);
+    line-height: 2cap;
+    padding-bottom: 10%;
+     }
+    }
+ }
+ .b-1 {
+    background-color: var(--Primary-03);
+    color: var(--Primary-05);
+    filter: none;
+    font-size: var(--step--1);
+    line-height: 2cap;
+    border-radius: 30px;
+    padding: 5%;
+}
 
 </style>

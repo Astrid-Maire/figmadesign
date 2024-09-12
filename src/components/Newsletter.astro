@@ -1,72 +1,100 @@
 ---
 import "../styles/global.css";
 ---
-<body>
+<div class="hele">
     <div class="newsletter">
         <div class="container-new">
             <h1>Subscribe Our Newsletter</h1>
             <h2>Build stronger Customer Relationships with Consultalk</h2>
         </div>
         <div class="container-new-1">
-    <p>your mail address</p>
-    <button class="sub">
-        Subscribe
-    </button>
+            <p>your mail address</p>
+            <button class="sub"> Subscribe</button>
         </div> 
     </div>
-    
-    </body>
-    <style>  
-body{
-    background-color: var(--Primary-03);
-    display: grid;
-    grid-template-rows: auto 1fr auto; 
-    grid-template-columns:
-        [full-start] 1fr [content-start] minmax(0, 0.65ch) [content-end] 1fr [full-end];
-    gap: 1rem; 
-}
+</div>
 
-    .newsletter{
-border-radius: 10px;
-font-size: var(--step--1);
-background-color: var(--Primary-03);
-width: calc(100% - 2rem);
-padding: 3%;
-grid-column: full;
+
+<style>  
+
+.hele{
+  inline-size: min(600px, 100% - 1rem);
+  padding: 3rem 1.5rem;
+  color: var(--Primary-05);
+  border-radius: 10px;
+  background: var(--Primary-03);
+  overflow: clip;
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-area: span 2/;
   
-  > * {
-    grid-column: content;
+  h1 {
+    margin: 0;
+    font-size: var(--step-2);
+  }
+
+  h2,p{
+    font-size: var(--step-1);
+  }
+
+  .sub{
+    font-size: var(--step-0);
+    background-color: var(--Primary-01);
+    border-radius: 30px;
+  }
+
+  
+  &::before {
+    --square-count: 12;
+    --square-size: 1rem;
+    --_square-size: var(--square-size, 1rem);
+    --_square-half: calc(var(--square-size) / 2);
+    --_square-sum: calc(var(--square-count) * var(--square-size));
+    z-index: -1;
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform-origin: 0 0;
+    inline-size: calc( round( var(--_square-sum), var(--_square-size) ) - var(--_square-half) );
+    aspect-ratio: .7;
+    background: linear-gradient(135deg, #BE965D, #976F40, #C99B61, #F0BE7B , #FFCB85, #EEBC79, #C0935B, #976F40) 0 0 / 100% 100%;
+    mask:
+      var(--square-pattern) 0 0 / var(--_square-size) var(--_square-size),
+      var(--square-pattern) var(--_square-half) var(--_square-half) / var(--_square-size) var(--_square-size);    rotate: -45deg;
+  }
+  
+  &::after {
+    content: '';
+    height: 100%;
+    width: 50%;
+    border-radius: inherit;
+    background: var(--Primary-02);
+    position: absolute;
+    top: 50%;
+    bottom: 0;
+    right: 2rem;
+    rotate: -45deg;
+    transform-origin: right top;
+  }
+
+  .container-new{
+  display:grid;
+  grid-template-rows: 1fr 1fr;
   }
 
   .container-new-1{
-    font-size: var(--step-0);
-     display: grid;
-    grid-columns: 2fr 1fr;
-        }
-
-        .container-new{
-
-        }
-        .sub{
-background-color: var(--Primary-01);
-border-radius: 10px;
-font-size: var(--step--1);
-}
-
-}
-
-.full-bleed {
-  grid-column: full;
-  display: grid;
-  grid-template-columns: subgrid;
-  
-  > * {
-    grid-column: content;
+    display:grid;
+  grid-template-rows: 1fr 1fr;
   }
 }
 
-* {
-  box-sizing: border-box;
+@layer {
+  body {
+    min-height: 100svh;
+    padding: 2rem;
+  }
 }
 
 </style>

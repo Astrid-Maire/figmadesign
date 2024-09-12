@@ -1,20 +1,22 @@
 ---
-import { Image } from 'astro:assets';
-import EmployeeSection from "../components/EmployeeSection.astro";
-const employeeData = await fetch(
-    "https://raw.githubusercontent.com/daviatkea/frontend-design/main/resources/reset.css"
-    ).then((res) => res.json());
+import "../styles/global.css";
 
-    import BaseLayots from "../layouts/BaseLayots.astro";
+import Header from "../components/Header.astro"
+import Aboutimg from "../components/Aboutimg.astro"
+import Footer from "../components/Footer.astro";
+import Newsletter from "../components/Newsletter.astro";
 ---
+<Header/>
 
+<Aboutimg />
 
-<BaseLayots title="Home">
+<body>
 
+<h2>Storyboard</h2>
+<p>Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service. Objectively innovate empowered manufactured products whereas parallel platforms. Holistically predominate extensible testing procedures for reliable supply chains.</p>
+<p>Proactively envisioned multimedia based expertise and cross-media growth strategies. Seamlessly visualize quality intellectual capital without superior collaboration and idea-sharing. Holistically pontificate installed base portals after maintainable products completely pursue scalable customer service.</p>
 
-</BaseLayots>
----
-<EmployeeSection data={employeeData} theme="dark"/>
-<EmployeeSection = {}/>
+</body>
 
-<Image alt="" src={}  format="avif"/>
+<Newsletter/>
+<Footer/>

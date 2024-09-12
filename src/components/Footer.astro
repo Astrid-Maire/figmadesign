@@ -1,33 +1,33 @@
 ---
 import "../styles/global.css";
 ---
-<body>
-<div class="footer">
-    <div class="container">
-        <h1>AskExperts</h1>
-    </div>
-    <hr>
-    <div class="container-1">
-<h2>©2022 Consultalk. All rights reserved | Terms of Service | Privacy Policy</h2>
+<div class="hele">
+    <div class="footer">
+        <div class="container">
+            <h1>AskExperts</h1>
+        </div>
+        <hr>
+        <div class="container-1">
+            <h2>©2022 Consultalk. All rights reserved | Terms of Service | Privacy Policy</h2>
+        </div>
     </div>
 </div>
-</body>
-
 
 <style>  
-body{
+.hele{
     background-color: var(--Primary-03);
     display: grid;
   grid-template-rows: auto 1fr auto ;
   grid-template-columns:
     [full-start] 1fr [content-start] minmax(0, 0.65ch) [content-end] 1fr [full-end];
+    z-index: 10;
 }
 
  hr {
         border: none;
         height: 2px;
         background-color: var(--Primary-05);
-        width: 55%; 
+        width: 65%; 
     }
 
 .container, .container-1 {
@@ -55,7 +55,6 @@ body{
   }
 }
 
-
 .full-bleed {
   grid-column: full;
   display: grid;
@@ -71,3 +70,4 @@ body{
   box-sizing: border-box;
 }
 
+</style>
